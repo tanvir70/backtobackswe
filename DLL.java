@@ -81,6 +81,20 @@ public class DLL {
         }
         secondLast.next = null;
     }
+     public void addAtIndex(int index, String data){
+        if ( index < 0 || index > this.size){
+            return;
+        }
+        Node newNode = new Node(data);
+
+        Node curreentNode = head;
+        for (int i = 0; i < index; i++) {
+            curreentNode = curreentNode.next;
+        }
+        newNode.next = curreentNode.next;
+        curreentNode.next = newNode;
+
+    }
 
     public void getSize(){
         System.out.println("\nThe size of the link list is : " + size);
