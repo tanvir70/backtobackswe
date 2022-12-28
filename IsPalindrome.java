@@ -21,9 +21,9 @@ public class IsPalindrome {
         }
 
         if ( n < 0 || n != rev)
-            System.out.println(n + " is not a palindrome number");
+            System.out.println(n + " is not a palindrome number.");
         if ( n == rev)
-            System.out.println(n + " is a palindrome number");
+            System.out.println(n + " is a palindrome number.");
 
     }
 }
