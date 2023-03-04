@@ -26,12 +26,12 @@ public class MinimumTimeDifference {
                     firstTimeSeen = i;
                     prevTimeSeen = i;
                 } else {
-                    minimumDifference = Math.min(minimumDifference, Math.min((i - prevTimeSeen), (1440 - (i + prevTimeSeen))));
+                    minimumDifference = Math.min(minimumDifference, Math.min(i - prevTimeSeen, 1440 - i + prevTimeSeen));
                     prevTimeSeen = i;
                 }
             }
         }
-        minimumDifference = Math.min(minimumDifference, Math.min((prevTimeSeen - firstTimeSeen), 1440 - prevTimeSeen + firstTimeSeen));
+        minimumDifference = Math.min(minimumDifference, Math.min(prevTimeSeen - firstTimeSeen, 1440 - prevTimeSeen + firstTimeSeen));
 
         return minimumDifference;
     }
@@ -39,8 +39,9 @@ public class MinimumTimeDifference {
         var timePoint = new ArrayList<String>();
         timePoint.add("00:03");
         timePoint.add("23:59");
+        timePoint.add("00:00");
         MinimumTimeDifference ob = new MinimumTimeDifference();
         System.out.print("Minimum difference is  : " + ob.findMinDifference(timePoint));
-        
+
     }
 }
